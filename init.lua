@@ -700,6 +700,23 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
+  {
+    'romgrk/barbar.nvim',
+    dependencies = {
+      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  },
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
@@ -866,3 +883,11 @@ vim.keymap.set('n', 'J', '5j')
 vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('v', 'J', '5j')
 vim.keymap.set('v', 'K', '5k')
+
+-- primetime mappings
+vim.keymap.set('x', '<leader>p', [["_dP]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+vim.keymap.set('n', '<C-I>', '<Cmd>BufferPrevious<CR>')
+vim.keymap.set('n', '<leader>]', '<Cmd>BufferNext<CR>')
+vim.keymap.set('n', '<leader>v', ':vsplit<CR><C-w>l')
