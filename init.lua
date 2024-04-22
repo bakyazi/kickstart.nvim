@@ -891,3 +891,6 @@ vim.keymap.set('n', '<leader>Y', [["+Y]])
 vim.keymap.set('n', '<C-I>', '<Cmd>BufferPrevious<CR>')
 vim.keymap.set('n', '<leader>]', '<Cmd>BufferNext<CR>')
 vim.keymap.set('n', '<leader>v', ':vsplit<CR><C-w>l')
+
+vim.keymap.set('i', '<M-Left>', '<C-o>0')
+vim.keymap.set('i', '<M-Right>', '<C-o>$')
