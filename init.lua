@@ -894,3 +894,7 @@ vim.keymap.set('n', '<leader>v', ':vsplit<CR><C-w>l')
 
 vim.keymap.set('i', '<M-Left>', '<C-o>0')
 vim.keymap.set('i', '<M-Right>', '<C-o>$')
+
+-- selection indent movements
+vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv')
